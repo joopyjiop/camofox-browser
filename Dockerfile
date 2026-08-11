@@ -60,6 +60,10 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 COPY scripts/ ./scripts/
+    # yt-dlp runtime dependency
+    python3-minimal \
++   build-essential \
+    && rm -rf /var/lib/apt/lists/*
 RUN npm ci --omit=dev
 
 COPY server.js ./
