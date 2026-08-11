@@ -8,6 +8,10 @@ ARG CAMOUFOX_RELEASE=beta.24
 ARG TARGETARCH
 
 # Install dependencies for Camoufox (Firefox-based)
+    # yt-dlp runtime dependency
+    python3-minimal \
++   build-essential \
+    && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y \
     # Firefox dependencies
     libgtk-3-0 \
